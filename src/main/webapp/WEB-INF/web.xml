@@ -23,7 +23,7 @@
 	    </listener-class>
     </listener>
     
-    <!-- Loads Spring Security config file -->
+    <!-- Loads Spring Security config file, used by ContextLoaderListener -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>

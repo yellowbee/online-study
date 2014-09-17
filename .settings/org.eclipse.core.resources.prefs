@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/pages/bs_login_page.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/course.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/page.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/tags/footer.tag=UTF-8
