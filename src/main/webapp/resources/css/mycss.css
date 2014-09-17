@@ -1,0 +1,105 @@
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+#navbar {
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #c0c0c0;
+	border-bottom: 1px solid #808080;
+}
+#content {
+	padding-bottom:100px; /* Height of the footer element */
+}
+#footer {
+	width:100%;
+	height:100px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-color: #c0c0c0;
+	border-top:1px solid #808080;
+	color:#333;
+	text-shadow:1px 1px 0 rgba(255,255,255,0.6);
+}
+
+p,h1,h2,h3,h4,h5,h5,ol,ul,a {
+	font-family: "Century Gothic", "Gill Sans", Arial, sans-serif;
+	font-size: 15px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#my-panel {
+	/* position: fixed;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 20%; */
+    border: 1px solid #ccc;
+    margin-top: 60px;
+    height: 90%;
+}
+
+
+#mycontainer {
+	margin-top: 0px;
+	padding-top: 120px;
+	padding-bottom: 100px;
+	position: relative;
+	height: 100%;
+}
+
+#mytable {
+	height: 80%;
+	margin-top: 5px;
+}
+#msgblock {
+	position: relative;
+	height: 100%;
+}
+#sysmsg {
+	height: 50%;
+	margin: 5px;
+}
+#unimsg {
+	height: 50%;
+	margin: 5px;
+}
+
+#menu {
+	/*float: left;
+	position: fixed;
+	width: 20%;	
+	top: 50px; */
+	background: #DCE0D5;
+	height: 100%;
+	overflow-y: auto;
+}
+
+li {
+	display: inline;
+	margin: 10px;
+}
+
+#navbar-text-pull-right {
+	float: right;
+}
+
+
+#myNavbar {
+   	background-color: #f2f2f2;
+}
+
+.text-center {
+	text-align: center;
+}
