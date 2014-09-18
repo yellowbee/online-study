@@ -24,22 +24,28 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
   $(function() {
     $( "#menu" ).menu();
   });
+  
   </script>
 </head>
 <body>
  
 	<h:navbar />
 	<div id="wrapper">
-	    <div id="mycontainer" class="container-fluid">            
-			 <ul id="menu">
-	  		<li><h4>课程大纲<h4></li>
-	  		<li><h4>课程说明</h4></li>
-	  		<li><h4><a href="forum">课程讨论区</a></h4></li>
-	  		<li><h4>课件下载</h4></li>
-	  		<li><h4>作业</h4></li>
-	  		<li><h4>成绩查询</h4></li>
-			</ul>    	
-	    	</div>
+	    <div id="mycontainer" class="container-fluid">
+	    	<div class="row">
+		    	<div class="col-lg-3">        
+					<ul id="menu">
+				  		<li><h4><b>课程大纲</b><h4></li>
+				  		<li><h4><b>课程说明</b></h4></li>
+				  		<li><a href="course_forum"><h4><b>课程讨论区</b></h4></a></li>
+				  		<li><h4><b>课件下载</b></h4></li>
+				  		<li><h4><b>作业</b></h4></li>
+				  		<li><h4><b>成绩查询</b></h4></li>
+					</ul>
+				</div>
+				<div class="col-lg-9">
+				</div>
+			</div>    	
 		</div>
 			
 		<h:footer />
