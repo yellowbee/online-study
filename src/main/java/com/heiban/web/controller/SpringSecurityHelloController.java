@@ -48,11 +48,11 @@ public class SpringSecurityHelloController {
 		return mav;
 	}
 
-	@RequestMapping(value="/course_forum", method=RequestMethod.GET)
+	/*@RequestMapping(value="/course_forum", method=RequestMethod.GET)
 	public ModelAndView courseForum() {
 		ModelAndView mav = new ModelAndView("course_forum");
 		return mav;
-	}
+	}*/
 	
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logoutPage() {

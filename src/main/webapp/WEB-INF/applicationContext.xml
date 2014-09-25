@@ -57,6 +57,9 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 	<bean id="userDao" class="com.heiban.dao.hib.UserDaoHib">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean id="mangoClientDao" class="com.heiban.dao.MongoClientDao" />
+	
 	<!-- <bean id="hibernateUtil" class="org.hibernate.SessionFactory.HibernateUtil">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean> -->

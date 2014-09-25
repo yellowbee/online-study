@@ -45,11 +45,11 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
         </thead>
         <tbody>
 	        <c:forEach items="${courses}" var="course">
-	        <tr>
-				<td><a href="mycourse">${course.courseId}</a></td>
-				<td>${course.course.courseName}
-				<td>${course.expireDate}
-			</tr>
+		        <tr>
+					<td><a href="mycourse">${course.courseId}</a></td>
+					<td>${course.course.courseName}
+					<td>${course.expireDate}
+				</tr>
 			</c:forEach>
         </tbody>
 		</table>

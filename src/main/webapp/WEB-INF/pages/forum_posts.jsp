@@ -44,16 +44,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 					</ul>
 				</div>
 				<div class="col-lg-9">
-					<table id="threadtable">
-						<c:forEach items="${result}" var="aThread">
-					        <tr class="thread">
-								<th class="title"> <h5><b><span class="circle">&nbsp;?&nbsp;</span>${aThread['title']}</b> <br/> <h6>&nbsp;&nbsp;发贴人:${aThread['username']}</h6> </h5> </th>
-								<th><h5>赞</h5></th>
-								<th><h5>回贴次数</h5></th>
-								<th><h5>浏览次数</h5></th>		
-							</tr>
-						</c:forEach>
-					</table>
+					
 				</div>
 			</div>    	
 		</div>
