@@ -46,7 +46,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
         <tbody>
 	        <c:forEach items="${courses}" var="course">
 		        <tr>
-					<td><a href="mycourse">${course.courseId}</a></td>
+					<td><a href="mycourse?sess=${course.session}">${course.courseId}</a></td>
 					<td>${course.course.courseName}
 					<td>${course.expireDate}
 				</tr>

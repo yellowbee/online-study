@@ -24,6 +24,9 @@ public class CoursesForUser {
 	@Column(name="course_id")
 	private String courseId;
 	
+	@Column(name="session")
+	private String session;
+	
 	@Column(name="role")
 	private String role;
 	
@@ -64,6 +67,14 @@ public class CoursesForUser {
 
 	public void setCourseId(String courseId) {
 		this.courseId = courseId;
+	}
+
+	public String getSession() {
+		return session;
+	}
+
+	public void setSession(String session) {
+		this.session = session;
 	}
 
 	public String getRole() {

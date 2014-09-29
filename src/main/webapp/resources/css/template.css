@@ -73,7 +73,7 @@ tr.thread {
 th.title {
 	color: #0367b0;	
 }
-.circle{
+.circle {
     #width:100px;
     #height:100px;
     border-radius:50px;
@@ -83,4 +83,14 @@ th.title {
     #line-height:100px;
     text-align:center;
     background:#000
+}
+
+.post_title {
+	color: #0367b0;
+	height: 30px;
+	background-color: #e6e6e6;
+}
+
+#post_edit {
+	margin-top: 100px;
 }

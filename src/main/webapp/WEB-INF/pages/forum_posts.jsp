@@ -43,14 +43,31 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 				  		<li><h4><b>成绩查询</b></h4></li>
 					</ul>
 				</div>
-				<div class="col-lg-9">
-					
+				<div class="col-lg-7">
+					<div id="postdiv">
+						<div>
+							<div class="post_title">&nbsp;&nbsp;${thread['username']}</div>
+							<h4>${thread['text']}</h4>
+						</div>
+						<c:forEach items="${posts}" var="aPost">
+							<div class="post_title">&nbsp;&nbsp;${aPost['username']}</div>
+							<p>${aPost['text']}<br/><br/></p>	
+						</c:forEach>
+					</div>
+					<div id="post_edit">
+						<div class="post_title">&nbsp;&nbsp;回贴</div>
+						<div style="color:#606060; margin-top:10px; margin-bottom:10px;font-size:12px">发新帖前， 请先阅读发贴须知</div>
+						<textarea name="area1" cols="40"></textarea>
+						<button type="button" class="sumbit">提交</button>
+					</div>
 				</div>
+				<div class="col-lg-2"></div>
 			</div>    	
 		</div>
 			
 		<h:footer />
 	</div>
- 
+	<script type="text/javascript" src="resources/nicedit/nicEdit.js"></script>
+	<script type="text/javascript">bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>
 </body>
 </html>

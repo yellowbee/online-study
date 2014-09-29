@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.heiban.domain.User;
@@ -43,8 +44,9 @@ public class SpringSecurityHelloController {
     }
 	
 	@RequestMapping(value="/mycourse", method=RequestMethod.GET)
-	public ModelAndView mycourse() {
+	public ModelAndView mycourse(@RequestParam String sess) {
 		ModelAndView mav = new ModelAndView("course");
+		mav.addObject("sess", sess);
 		return mav;
 	}
 
