@@ -1,7 +1,9 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="h" %>
+<%@ taglib  uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -27,18 +29,17 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	<script>
 		$(function() {
 			$( "#menu" ).menu();
-			
-			$("#newthread_submit").click(function () {
-				var title_text = $("#title_for_post").val();
-				var content_text = $("#myInstance1").html();
-				if (title_text.length == 0 || content_text.length == 0) {
-					alert("标题栏和回帖栏不能为空");				
-				}
-				else {
-					alert("title: " + title_text + " ; " + "content: " + content_text + " ; " + $(this).attr("name"));
-				}
-			});
 		});
+		
+		function validateForm() {
+    		var title = $("#title_new_thread").val();
+			var content = $("#content_new_thread").val();
+   		 	if (title.length == 0 || content.length == 0) {
+        			alert("标题栏和新帖内容栏不能为空");
+        		return false;
+    		}
+    		return true;
+		}
 	</script>
 </head>
 <body>
@@ -70,12 +71,18 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 						</c:forEach>
 					</table>
 					<!-- editor for creating new threads -->
-					<div id="post_edit">
-						<div class="post_title">&nbsp;&nbsp;发新贴</div>
+					<div id="thread_edit">
+						<div class="thread_title">&nbsp;&nbsp;发新贴</div>
 						<div style="color:#606060; margin-top:10px; margin-bottom:10px;font-size:12px">发新帖前， 请先阅读发贴须知</div>
-						<input type="text" id="title_for_post" placeholder="给新帖一个标题" />
-						<div id="myInstance1" style="font-size: 16px; padding: 3px; border: 5px solid #808080; width: 50%;"></div>
-						<button type="button" id="newthread_submit" name="${sess}" class="sumbit">提交</button>
+						<!-- Great! I can totally use a div inside a form. -->
+						<form:form name="new_thread" accept-charset="UTF-8" action="new_thread" onsubmit="return validateForm()" method="post">
+							<form:input type="hidden" path="session" value="${sess}"/>
+							<form:input type="text" id="title_new_thread" path="title" placeholder="给新帖一个标题" />
+							<div style="font-size: 16px; border: 5px solid #808080; width: 50%">
+								<form:textarea path="content" id="content_new_thread" style="width: 100%"/>						
+							</div>
+							<input type="submit" value="提交"/>
+						</form:form>
 					</div>
 				</div>
 			</div>    	
@@ -87,7 +94,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	<script type="text/javascript">
 		bkLib.onDomLoaded(function() {
 	        var myNicEditor = new nicEditor();
-	        myNicEditor.addInstance('myInstance1');
+	        myNicEditor.addInstance('content_new_thread');
 		});
 	</script>
 </body>

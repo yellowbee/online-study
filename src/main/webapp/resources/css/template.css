@@ -85,12 +85,12 @@ th.title {
     background:#000
 }
 
-.post_title {
+.post_title, .thread_title {
 	color: #0367b0;
 	height: 30px;
 	background-color: #e6e6e6;
 }
 
-#post_edit {
+#post_edit, #thread_edit {
 	margin-top: 100px;
 }
