@@ -35,7 +35,7 @@ public class ForumController {
 	public ModelAndView courseForum(@RequestParam String sess) {
 		ModelAndView mav = new ModelAndView("forum_threads");
 		mav.addObject("sess", sess);
-		System.out.println("sess: " + sess);
+		//System.out.println("sess: " + sess);
 		Set<DBObject> threads = forumService.getForumThreadsBySessionId(sess);
 		mav.addObject("threads", threads);
 		for (DBObject dbo : threads) {
@@ -57,21 +57,13 @@ public class ForumController {
 		}*/
 		return mav;
 	}
-	
+
 	@RequestMapping(value="/new_thread", method=RequestMethod.POST)
 	public ModelAndView addNewPost(@ModelAttribute("newThreadFrom") NewThreadForm newThreadForm, BindingResult result) {
 		System.out.println(newThreadForm.getSession());
-		byte[] title_in_bytes;
-		try {
-			title_in_bytes = newThreadForm.getTitle().getBytes("UTF-8");
-			System.out.println(new String(title_in_bytes, "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		
+		System.out.println(newThreadForm.getTitle());
 		System.out.println(newThreadForm.getContent());
-		ModelAndView mav = new ModelAndView("new_thread");
-		mav.addObject("title", newThreadForm.getTitle());
-		return mav;
+		
+		return new ModelAndView("redirect:course_forum?" + "sess=" + newThreadForm.getSession());
 	}
 }
