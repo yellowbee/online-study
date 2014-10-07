@@ -84,9 +84,9 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 							<input type="submit" value="提交"/>
 						</form:form>
 					</div>
-					<div><a href="WEB-INF/downloadable/sample.txt">sample.txt</a></div>
-					<a href="downloadable?filename=form.pdf">form.pdf</a>
-					<a href="WEB-INF/downloadable/address.JPG">address.JPG</a>
+					<div><a href="downloadable?filename=sample.txt">sample.txt</a></div>
+					<div><a href="downloadable?filename=form.pdf">form.pdf</a></div>
+					<div><a href="downloadable?filename=ubuntu.jpg">ubuntu.jpg</a></div>
 				</div>
 			</div>    	
 		</div>

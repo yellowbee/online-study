@@ -5,6 +5,9 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -60,10 +63,15 @@ public class ForumController {
 
 	@RequestMapping(value="/new_thread", method=RequestMethod.POST)
 	public ModelAndView addNewPost(@ModelAttribute("newThreadFrom") NewThreadForm newThreadForm, BindingResult result) {
-		System.out.println(newThreadForm.getSession());
-		System.out.println(newThreadForm.getTitle());
-		System.out.println(newThreadForm.getContent());
+		String sessionId = newThreadForm.getSession();
+		String title = newThreadForm.getTitle();
+		String text = newThreadForm.getContent();
 		
+		SecurityContext context = SecurityContextHolder.getContext();
+		Authentication authentication = context.getAuthentication();
+		String username = authentication.getName();
+		
+		forumService.insertThread(sessionId, username, title, text);
 		return new ModelAndView("redirect:course_forum?" + "sess=" + newThreadForm.getSession());
 	}
 }
