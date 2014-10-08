@@ -38,7 +38,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 				  		<li><h4><b>课程大纲</b><h4></li>
 				  		<li><h4><b>课程说明</b></h4></li>
 				  		<li><a href="course_forum?sess=${sess}"><h4><b>课程讨论区</b></h4></a></li>
-				  		<li><h4><b>课件下载</b></h4></li>
+				  		<li><a href="session_material"><h4><b>课件下载</b></h4></a></li>
 				  		<li><h4><b>作业</b></h4></li>
 				  		<li><h4><b>成绩查询</b></h4></li>
 					</ul>
