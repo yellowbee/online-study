@@ -55,6 +55,12 @@ public class SpringSecurityHelloController {
 		ModelAndView mav = new ModelAndView("session_docs");
 		return mav;
 	}
+	
+	@RequestMapping(value="/hw_submission", method=RequestMethod.GET)
+	public ModelAndView myHomeworkSubmission() {
+		ModelAndView mav = new ModelAndView("hw_upload");
+		return mav;
+	}
 	/*@RequestMapping(value="/course_forum", method=RequestMethod.GET)
 	public ModelAndView courseForum() {
 		ModelAndView mav = new ModelAndView("course_forum");

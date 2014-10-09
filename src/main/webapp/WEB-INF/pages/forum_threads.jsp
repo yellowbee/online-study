@@ -54,7 +54,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 				  		<li><h4><b>课程说明</b></h4></li>
 				  		<li><a href="course_forum?sess=${sess}"><h4><b>课程讨论区</b></h4></a></li>
 				  		<li><h4><b>课件下载</b></h4></li>
-				  		<li><h4><b>作业</b></h4></li>
+				  		<li><h4><b>作业提交</b></h4></li>
 				  		<li><h4><b>成绩查询</b></h4></li>
 					</ul>
 				</div>
@@ -74,19 +74,17 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 					<div id="thread_edit">
 						<div class="thread_title">&nbsp;&nbsp;发新贴</div>
 						<div style="color:#606060; margin-top:10px; margin-bottom:10px;font-size:12px">发新帖前， 请先阅读发贴须知</div>
-						<!-- Great! I can totally use a div inside a form. -->
-						<form:form name="new_thread" action="new_thread" method="post">
-							<form:input type="hidden" path="session" value="${sess}"/>
-							<form:input type="text" id="title_new_thread" path="title" placeholder="给新帖一个标题" />
-							<!--  <div style="font-size: 16px; border: 5px solid #808080; width: 50%"> -->
-								<form:textarea path="content" id="content_new_thread" style="width: 100%"/>						
-							<!-- </div> -->
-							<input type="submit" value="提交"/>
-						</form:form>
+						<div style="margin-bottom: 25px;">
+							<form:form name="new_thread" action="new_thread" method="post">
+								<form:input type="hidden" path="session" value="${sess}"/>
+								<form:input type="text" id="title_new_thread" path="title" placeholder="给新帖一个标题" />
+								<!--  <div style="font-size: 16px; border: 5px solid #808080; width: 50%"> -->
+									<form:textarea path="content" id="content_new_thread" style="width: 100%"/>						
+								<!-- </div> -->
+								<input type="submit" value="提交"/>
+							</form:form>
+						<div>
 					</div>
-					<div><a href="downloadable?filename=sample.txt">sample.txt</a></div>
-					<div><a href="downloadable?filename=form.pdf">form.pdf</a></div>
-					<div><a href="downloadable?filename=ubuntu.jpg">ubuntu.jpg</a></div>
 				</div>
 			</div>    	
 		</div>

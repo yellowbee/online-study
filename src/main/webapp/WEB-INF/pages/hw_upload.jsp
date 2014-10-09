@@ -52,47 +52,71 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 								<li id="" style="border-top: 1px solid #ccc;">
 									<div style="padding: 10px;padding-left: 20px;">
 										<img src="resources/images/document_on.gif" />
-										<span style="color:#000000;">课堂讲义</span>
-										<div>
+										<span style="color:#000000;">作业1</span>
+										<div class="container-fluid">
+										<div class="row">
+										<div class="col-md-2"><span style="font-size: 12px;padding-left: 40px;">已提交的作业文档 :</span></div>
+										<div class="col-md-10">
+										<div style="margin: 0;">
 											<ul>
-												<li style="padding-left: 110px;margin:0;">
+												<li>
 													<span><img src="resources/images/cal_year_event.gif" alt=""></span>
-													<a href="downloadable?filename=form.pdf">form.pdf</a>								
+													<a href="downloadable?filename=form.pdf">form.pdf</a>
+													<a href="" style="padding-left: 10px; font-size: 12px;">删除</a>
+													<a href="" style="padding-left: 20px; font-size: 12px;">提交更多</a>						
 												</li>
-												<li style="padding-left: 110px;margin:0;">
+												<li>
 													<span><img src="resources/images/cal_year_event.gif" alt=""></span>
-													<a href="downloadable?filename=form.pdf">form.pdf</a>								
+													<a href="downloadable?filename=form.pdf">form.pdf</a>
+													<a href="" style="padding-left: 10px; font-size: 12px;">删除</a>								
 												</li>
-												<li style="padding-left: 110px;margin:0;">
+												<li>
 													<span><img src="resources/images/cal_year_event.gif" alt=""></span>
-													<a href="downloadable?filename=form.pdf">form.pdf</a>								
+													<a href="downloadable?filename=form.pdf">form.pdf</a>
+													<a href="" style="padding-left: 10px; font-size: 12px;">删除</a>								
 												</li>
 											</ul>								
 										</div>
+										</div>
+										</div>
+										</div>
+
 									</div>					
 								</li>
 								
 								<li id="" style="border-top: 1px solid #ccc;">
 									<div style="padding: 10px;padding-left: 20px;">
 										<img src="resources/images/document_on.gif" />
-										<span style="color:#000000;">作业解答</span>
-										<div>
+										<span style="color:#000000;">作业2</span>
+										<div class="container-fluid">
+										<div class="row">
+										<div class="col-md-2"><span style="font-size: 12px;padding-left: 40px;">已提交的作业文档 :</span></div>
+										<div class="col-md-10">
+										<div style="margin: 0;">
 											<ul>
-												<li style="padding-left: 110px;margin:0;">
+												<li>
 													<span><img src="resources/images/cal_year_event.gif" alt=""></span>
-													<a href="downloadable?filename=sample.txt">sample.txt</a>								
+													<a href="downloadable?filename=form.pdf">form.pdf</a>
+													<a href="" style="padding-left: 10px; font-size: 12px;">删除</a>
+													<a href="" style="padding-left: 20px; font-size: 12px;">提交更多</a>						
 												</li>
-												<li style="padding-left: 110px;margin:0;">
+												<li>
 													<span><img src="resources/images/cal_year_event.gif" alt=""></span>
-													<a href="downloadable?filename=sample.txt">sample.txt</a>								
+													<a href="downloadable?filename=form.pdf">form.pdf</a>
+													<a href="" style="padding-left: 10px; font-size: 12px;">删除</a>								
 												</li>
-												<li style="padding-left: 110px;margin:0;">
+												<li>
 													<span><img src="resources/images/cal_year_event.gif" alt=""></span>
-													<a href="downloadable?filename=sample.txt">sample.txt</a>							
+													<a href="downloadable?filename=form.pdf">form.pdf</a>
+													<a href="" style="padding-left: 10px; font-size: 12px;">删除</a>								
 												</li>
 											</ul>								
 										</div>
-									</div>					
+										</div>
+										</div>
+										</div>
+
+									</div>						
 								</li>
 								
 							</ul>
