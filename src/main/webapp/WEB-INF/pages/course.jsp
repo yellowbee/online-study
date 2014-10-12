@@ -19,7 +19,6 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css">
 
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
     $( "#menu" ).menu();
@@ -40,7 +39,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 				  		<li><a href="course_forum?sess=${sess}"><h4><b>课程讨论区</b></h4></a></li>
 				  		<li><a href="session_material"><h4><b>课件下载</b></h4></a></li>
 				  		<li><a href="hw_submission"><h4><b>作业提交</b></h4></a></li>
-				  		<li><h4><b>成绩查询</b></h4></li>
+				  		<li><a href="grade"><h4><b>成绩查询</b></h4></a></li>
 					</ul>
 				</div>
 				<div class="col-lg-9">
