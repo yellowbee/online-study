@@ -50,11 +50,12 @@ public class ForumController {
 	}
 
 	@RequestMapping(value="/forum_posts", method=RequestMethod.GET)
-	public ModelAndView getForumPosts(@RequestParam int thread_seq) {
+	public ModelAndView getForumPosts(@RequestParam int thread_seq, @RequestParam String sess) {
 		ModelAndView mav = new ModelAndView("forum_posts");
 		Set<DBObject> posts = forumService.getForumPostsByThreadSequence(thread_seq);
 		mav.addObject("thread", forumService.getOneForumThreadByThreadSequence(thread_seq));
 		mav.addObject("posts", posts);
+		mav.addObject("sess", sess);
 		/*for (DBObject dbo : posts) {
 			System.out.println(dbo.get("text"));
 		}*/

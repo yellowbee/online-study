@@ -1,4 +1,4 @@
-<%@ page isELIgnored="false" %>
+<%-- <%@ page isELIgnored="false" %> --%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="h" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -80,7 +80,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
     	</div>
 	</div>
 	
-	<h:footer />
+	<h:footer copyright="版权2013 爱杜公司"/>
 	</div>
 </body>
 </html> 

@@ -33,21 +33,14 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	    <div id="mycontainer" class="container-fluid">
 	    	<div class="row">
 		    	<div class="col-lg-3">        
-					<ul id="menu">
-				  		<li><h4><b>课程大纲</b><h4></li>
-				  		<li><h4><b>课程说明</b></h4></li>
-				  		<li><a href="course_forum?sess=${sess}"><h4><b>课程讨论区</b></h4></a></li>
-				  		<li><a href="session_material"><h4><b>课件下载</b></h4></a></li>
-				  		<li><a href="hw_submission"><h4><b>作业提交</b></h4></a></li>
-				  		<li><a href="grade"><h4><b>成绩查询</b></h4></a></li>
-					</ul>
+					<h:sidebar_menu sess="${sess}"/>
 				</div>
 				<div class="col-lg-9">
 				</div>
 			</div>    	
 		</div>
 			
-		<h:footer />
+		<h:footer copyright="版权2013 爱杜公司"/>
 	</div>
  
 </body>

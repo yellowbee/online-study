@@ -34,14 +34,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	    <div id="mycontainer" class="container-fluid">
 	    	<div class="row">
 		    	<div class="col-lg-3">        
-					<ul id="menu">
-				  		<li><h4><b>课程大纲</b><h4></li>
-				  		<li><h4><b>课程说明</b></h4></li>
-				  		<li><a href="course_forum"><h4><b>课程讨论区</b></h4></a></li>
-				  		<li><h4><b>课件下载</b></h4></li>
-				  		<li><h4><b>作业提交</b></h4></li>
-				  		<li><h4><b>成绩查询</b></h4></li>
-					</ul>
+					<h:sidebar_menu sess="${sess}"/>
 				</div>
 				<div class="col-lg-9">
 					<div id="sess-docs-containter" style="border:1px solid #ccc;border-radius:5px;">
@@ -102,7 +95,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 			</div>    	
 		</div>
 			
-		<h:footer />
+		<h:footer copyright="版权2013 爱杜公司"/>
 	</div>
  
 </body>

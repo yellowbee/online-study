@@ -51,20 +51,23 @@ public class SpringSecurityHelloController {
 	}
 
 	@RequestMapping(value="/session_material", method=RequestMethod.GET)
-	public ModelAndView mySessionMaterial() {
+	public ModelAndView mySessionMaterial(@RequestParam String sess) {
 		ModelAndView mav = new ModelAndView("session_docs");
+		mav.addObject("sess", sess);
 		return mav;
 	}
 	
 	@RequestMapping(value="/hw_submission", method=RequestMethod.GET)
-	public ModelAndView myHomeworkSubmission() {
+	public ModelAndView myHomeworkSubmission(@RequestParam String sess) {
 		ModelAndView mav = new ModelAndView("hw_upload");
+		mav.addObject("sess", sess);
 		return mav;
 	}
 	
 	@RequestMapping(value="/grade", method=RequestMethod.GET)
-	public ModelAndView checkGrade() {
+	public ModelAndView checkGrade(@RequestParam String sess) {
 		ModelAndView mav = new ModelAndView("mygrade");
+		mav.addObject("sess", sess);
 		return mav;
 	}
 	/*@RequestMapping(value="/course_forum", method=RequestMethod.GET)

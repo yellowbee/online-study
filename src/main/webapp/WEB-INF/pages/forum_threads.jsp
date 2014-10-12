@@ -46,24 +46,26 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
  
 	<h:navbar />
 	<div id="wrapper">
-	    <div id="mycontainer" class="container-fluid">
+	    <div id="mycontainer" class="container-fluid">    
 	    	<div class="row">
 		    	<div class="col-lg-3">        
-					<ul id="menu">
-				  		<li><h4><b>课程大纲</b><h4></li>
-				  		<li><h4><b>课程说明</b></h4></li>
-				  		<li><a href="course_forum?sess=${sess}"><h4><b>课程讨论区</b></h4></a></li>
-				  		<li><h4><b>课件下载</b></h4></li>
-				  		<li><h4><b>作业提交</b></h4></li>
-				  		<li><h4><b>成绩查询</b></h4></li>
-					</ul>
+					<h:sidebar_menu sess="${sess}"/>
 				</div>
 				<div class="col-lg-9">
 					<!--  list all threads -->
 					<table id="threadtable">
 						<c:forEach items="${threads}" var="aThread">
 					        <tr class="thread">
-								<th class="title"> <h5><b><span class="circle">&nbsp;?&nbsp;</span><a href="forum_posts?thread_seq=${aThread['thread_seq']}">${aThread['title']}</a></b> <br/> <h6>&nbsp;&nbsp;发贴人:${aThread['username']}</h6> </h5> </th>
+								<th class="title">
+									<h5>
+										<b>
+											<span class="circle">&nbsp;?&nbsp;</span>
+											<a href="forum_posts?thread_seq=${aThread['thread_seq']}&sess=${sess}">${aThread['title']}</a>
+										</b>
+										<br/>
+										<h6>&nbsp;&nbsp;发贴人:${aThread['username']}</h6>
+									</h5>
+								</th>
 								<th><h5>赞</h5></th>
 								<th><h5>回贴次数</h5></th>
 								<th><h5>浏览次数</h5></th>		
@@ -78,18 +80,15 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 							<form:form name="new_thread" action="new_thread" method="post">
 								<form:input type="hidden" path="session" value="${sess}"/>
 								<form:input type="text" id="title_new_thread" path="title" placeholder="给新帖一个标题" />
-								<!--  <div style="font-size: 16px; border: 5px solid #808080; width: 50%"> -->
-									<form:textarea path="content" id="content_new_thread" style="width: 100%"/>						
-								<!-- </div> -->
+								<form:textarea path="content" id="content_new_thread" style="width: 100%"/>						
 								<input type="submit" value="提交"/>
 							</form:form>
-						<div>
+						</div>				
 					</div>
-				</div>
-			</div>    	
+				</div>		    	
+			</div>
 		</div>
-
-		<h:footer />
+		<h:footer copyright="版权2013 爱杜公司"/>
 	</div>
 	<script type="text/javascript" src="resources/nicedit/nicEdit.js"></script>
 	<script type="text/javascript">

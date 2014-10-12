@@ -1,3 +1,4 @@
 <%@ tag pageEncoding="UTF-8"%>
+<%@ attribute name="copyright"%>
 
-<div id="footer" class="text-center">版权2013 爱杜公司</div>
+<div id="footer" class="text-center">${copyright}</div>
