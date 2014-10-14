@@ -1,5 +1,8 @@
 package com.heiban.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
@@ -30,12 +33,15 @@ public class SpringSecurityHelloController {
 	}
 
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-    public ModelAndView mypage() {
+    public ModelAndView mypage(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("page");
 		SecurityContext context = SecurityContextHolder.getContext();
 		Authentication authentication = context.getAuthentication();
 		String username = authentication.getName();
 		User user = heibanService.getUserByUsername(username);
+		HttpSession session = request.getSession();
+		session.setAttribute("fullname", user.getLastName() + user.getFirstName());
+		
 		mav.addObject("username", username);
 		mav.addObject("firstname", user.getFirstName());
 		mav.addObject("lastname", user.getLastName());

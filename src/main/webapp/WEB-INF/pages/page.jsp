@@ -22,7 +22,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 </head>
 <body>
 
-	<h:navbar />
+	<h:navbar/>
 	<div id="wrapper">
     	<div id="mycontainer" class="container-fluid">            
 		<div class="row">
