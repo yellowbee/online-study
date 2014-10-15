@@ -13,17 +13,23 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 	<h:resources />
   
   <script>
-  $(function() {
-    $( "#menu" ).menu();
-  });
-  
+  	$(function () {
+		$( "#menu" ).menu();
+		
+		/* Event handlers to show and hide the dropdown menu */
+		$("#avatar_head").on("mouseover", function () {
+			$("#avatar_dropdown").css("visibility", "visible");
+		});
+		$("body").click(function () {
+			$("#avatar_dropdown").css("visibility", "hidden");
+		});
+	});
   </script>
 </head>
 <body>
- 
-	<h:navbar />
 	<div id="wrapper">
 	    <div id="mycontainer" class="container-fluid">
+	    	<h:navbar/>
 	    	<div class="row">
 		    	<div class="col-lg-3">        
 					<h:sidebar_menu sess="${sess}"/>

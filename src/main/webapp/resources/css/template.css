@@ -98,3 +98,42 @@ th.title {
 ul {
 	list-style-type: none;
 }
+
+/* start of styles for avatar and its dropdown menu
+   in the navbar */
+#avatar_dropdown li {
+	list-style: none;
+	text-decoration: none;
+}
+#avatar_dropdown a {
+	text-decoration: none;
+	color: #808080;
+}
+#avatar_dropdown div:hover {
+	background-color: #f0f0f0;
+}
+#avatar_dropdown {
+	width: 80px;
+	border-top: 1px solid #808080;
+	border-left: 1px solid #808080;
+	border-right: 1px solid #808080;
+	position: absolute;
+	top: 25px;
+	left: 0px;
+	background-color: #e0e0e0;
+	visibility: hidden;
+}
+#avatar_dropdown div {
+	border-bottom: 1px solid #808080;
+	text-align: center;
+	font-size: 12px;
+}
+#avatar {
+	float: right;
+	width: 100px;
+	height: 25px;
+	margin: 0;
+	position: relative;
+	background-color: #909090;
+}
+/* end of avatar styles */
