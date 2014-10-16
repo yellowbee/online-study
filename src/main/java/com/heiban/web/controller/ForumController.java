@@ -1,6 +1,5 @@
 package com.heiban.web.controller;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.heiban.service.impl.ForumServiceImpl;
+import com.heiban.web.formbean.NewPostForm;
 import com.heiban.web.formbean.NewThreadForm;
 import com.mongodb.DBObject;
 
@@ -56,6 +56,9 @@ public class ForumController {
 		mav.addObject("thread", forumService.getOneForumThreadByThreadSequence(thread_seq));
 		mav.addObject("posts", posts);
 		mav.addObject("sess", sess);
+		mav.addObject("thread_seq", String.valueOf(thread_seq));
+		
+		mav.addObject("command", new NewPostForm());
 		/*for (DBObject dbo : posts) {
 			System.out.println(dbo.get("text"));
 		}*/
@@ -63,7 +66,7 @@ public class ForumController {
 	}
 
 	@RequestMapping(value="/new_thread", method=RequestMethod.POST)
-	public ModelAndView addNewPost(@ModelAttribute("newThreadFrom") NewThreadForm newThreadForm, BindingResult result) {
+	public ModelAndView addNewPost(@ModelAttribute("newThreadForm") NewThreadForm newThreadForm, BindingResult result) {
 		String sessionId = newThreadForm.getSession();
 		String title = newThreadForm.getTitle();
 		String text = newThreadForm.getContent();
@@ -73,6 +76,20 @@ public class ForumController {
 		String username = authentication.getName();
 		
 		forumService.insertThread(sessionId, username, title, text);
-		return new ModelAndView("redirect:course_forum?" + "sess=" + newThreadForm.getSession());
+		return new ModelAndView("redirect:course_forum?" + "sess=" + sessionId);
+	}
+	
+	@RequestMapping(value="/new_post", method=RequestMethod.POST)
+	public ModelAndView addNewPPost(@ModelAttribute("newPostForm") NewPostForm newPostForm, BindingResult result) {
+		String sessionId = newPostForm.getSession();
+		String thread_seq = newPostForm.getThread_seq();
+		String text = newPostForm.getContent();
+		
+		SecurityContext context = SecurityContextHolder.getContext();
+		Authentication authentication = context.getAuthentication();
+		String username = authentication.getName();
+		
+		forumService.insertPost(thread_seq, username, text);
+		return new ModelAndView("redirect:forum_posts?" + "thread_seq=" + thread_seq + "&" + "sess=" + sessionId);
 	}
 }

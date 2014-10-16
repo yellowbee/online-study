@@ -92,7 +92,7 @@ public class ForumServiceImpl {
 		DBObject result = cursor.next();
 		if (result != null) {
 			int next_seq = ((Double)result.get("sequence_value")).intValue() + 1;
-			BasicDBObject q = new BasicDBObject("_id", "threads");
+			BasicDBObject q = new BasicDBObject("_id", collectionName);
 			BasicDBObject o = new BasicDBObject("sequence_value", (double)next_seq);
 			BasicDBObject update_obj = new BasicDBObject("$set", o);
 			coll.update(q, update_obj);
@@ -112,5 +112,15 @@ public class ForumServiceImpl {
 								append("text", text).
 								append("thread_seq", next_seq);
 		coll.insert(doc);		
+	}
+	
+	public void insertPost(String thread_seq, String username, String text) {
+		DBCollection coll = db.getCollection("posts");
+		double next_seq = (double)getNextSequenceValue("posts");
+		BasicDBObject doc = new BasicDBObject("post_seq", next_seq).
+								append("thread_seq", Integer.valueOf(thread_seq)).
+								append("username", username).
+								append("text", text);
+		coll.insert(doc);
 	}
 }
