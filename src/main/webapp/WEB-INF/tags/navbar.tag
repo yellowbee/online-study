@@ -14,7 +14,7 @@
 			<img src="resources/images/arrowDown-topnav.png" style="position: absolute;top: 10px;left: 70px;"/>
 		</a>		
 		<div id="avatar_dropdown">
-			<div><a href="#">登&nbsp;出</a></div>	
+			<div><a href="#"></a></div>	
 			<div><a href="#">登&nbsp;出</a></div>	
 		</div>
 	</div>

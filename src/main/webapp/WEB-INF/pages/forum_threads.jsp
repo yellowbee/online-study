@@ -13,18 +13,24 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 <head>
 	<title>jQuery UI Menu - Default functionality</title>
 	<h:resources />
+	<script type="text/javascript" src="resources/nicedit/nicEdit.js"></script>
 	
 	<script>
 		$(function () {
 			$( "#menu" ).menu();
 			
-			/* Event handlers to show and hide the dropdown menu */
+			/* Start Event handlers to show and hide the dropdown menu */
 			$("#avatar_head").on("mouseover", function () {
 				$("#avatar_dropdown").css("visibility", "visible");
 			});
 			$("body").click(function () {
 				$("#avatar_dropdown").css("visibility", "hidden");
 			});
+			/* End */
+			
+			/* Start nicEditor */
+			bkLib.onDomLoaded(function() { nicEditors.allTextAreas(); });
+			/* End */
 		});
 		
 		function validateForm() {
@@ -75,7 +81,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 							<form:form name="new_thread" action="new_thread" method="post">
 								<form:input type="hidden" path="session" value="${sess}"/>
 								<form:input type="text" id="title_new_thread" path="title" placeholder="给新帖一个标题" />
-								<form:textarea path="content" id="content_new_thread" style="width: 100%"/>						
+								<form:textarea path="content" id="content_new_thread" style="width: 100%"></form:textarea>						
 								<input type="submit" value="提交"/>
 							</form:form>
 						</div>				
@@ -85,12 +91,12 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 		</div>
 		<h:footer copyright="版权2013 爱杜公司"/>
 	</div>
-	<script type="text/javascript" src="resources/nicedit/nicEdit.js"></script>
+
 	<script type="text/javascript">
-		bkLib.onDomLoaded(function() {
+		/* bkLib.onDomLoaded(function() {
 	        var myNicEditor = new nicEditor();
 	        myNicEditor.addInstance('content_new_thread');
-		});
+		}); */
 	</script>
 </body>
 </html>

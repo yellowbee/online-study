@@ -51,7 +51,7 @@ public class SpringSecurityHelloController {
 	
 	@RequestMapping(value="/mycourse", method=RequestMethod.GET)
 	public ModelAndView mycourse(@RequestParam String sess) {
-		ModelAndView mav = new ModelAndView("course");
+		ModelAndView mav = new ModelAndView("course_home");
 		mav.addObject("sess", sess);
 		return mav;
 	}
@@ -76,6 +76,14 @@ public class SpringSecurityHelloController {
 		mav.addObject("sess", sess);
 		return mav;
 	}
+	
+	@RequestMapping(value="/course_home", method=RequestMethod.GET)
+	public ModelAndView course_home(@RequestParam String sess) {
+		ModelAndView mav = new ModelAndView("course_home");
+		mav.addObject("sess", sess);
+		return mav;
+	}
+	
 	/*@RequestMapping(value="/course_forum", method=RequestMethod.GET)
 	public ModelAndView courseForum() {
 		ModelAndView mav = new ModelAndView("course_forum");

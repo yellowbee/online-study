@@ -136,4 +136,11 @@ ul {
 	position: relative;
 	background-color: #909090;
 }
+
 /* end of avatar styles */
+
+/* Start for jquery datepicker calendar */
+.ui-datepicker {
+	font-size: 12px;		
+}
+/* End for jquery datepicker calendar */
